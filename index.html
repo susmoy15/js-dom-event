@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Events</title>
+</head>
+<body>
+    <h1>DOM er ajke special event!!!</h1>
+    <h3 id="handler-status">Default Text</h3>
+    <button onclick="console.log(7)">click me</button>
+    <button onclick="red()">Make red</button>
+    <button id="make-blue">Make blue</button>
+    <button id="make-green">Make Green</button>
+    <button id="make-yellow">Make Yellow</button>
+
+
+    <button id="event-listener">Handle event By EventListener. </button>
+    <script src="js/event.js"></script>
+    <script>
+        const makeBlueButton = document.getElementById('make-blue');
+        makeBlueButton.onclick=blue;
+
+        function blue(){
+            document.body.style.backgroundColor = 'blue';
+        }
+
+        const makeGreenButton = document.getElementById('make-green');
+        makeGreenButton.addEventListener('click', function makeaGreen(){
+            document.body.style.backgroundColor = 'green';
+
+        })    
+        document.getElementById('make-yellow').addEventListener('click',function makeYellow(){
+
+            document.body.style.backgroundColor = 'yellow';
+        })
+
+        document.getElementById('event-listener').addEventListener('click',function(){
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText =  'Susmoy The Great'
+        })
+    </script>
+
+</body>
+</html>
